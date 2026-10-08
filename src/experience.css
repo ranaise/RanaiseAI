@@ -1,0 +1,52 @@
+/* Platform overview and actual Interactive Beta in a single responsive experience. */
+.experience-tabs{display:inline-flex;max-width:100%;gap:5px;margin:31px 0 27px;padding:5px;border:1px solid #e6e0f2;background:#f8f6ff;border-radius:14px;overflow-x:auto}
+.experience-tab{border:0;background:transparent;color:#716987;display:inline-flex;align-items:center;justify-content:center;gap:12px;font-size:13px;font-weight:750;padding:13px 22px;min-height:47px;border-radius:10px;white-space:nowrap;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s}
+.experience-tab:hover{color:#4735a0}
+.experience-tab.is-active{background:#fff;color:#44329a;box-shadow:0 3px 12px rgba(46,31,99,.09)}
+.experience-tab:focus-visible{outline:3px solid #8e7fe0;outline-offset:2px}
+.experience-tab span{font-size:15px;line-height:1}
+.experience-panel[hidden]{display:none!important}
+.experience-panel .beta-frame{margin:0;min-height:570px}
+.experience-intro{font-size:14px;line-height:1.85;color:#706980;max-width:850px;margin:0 0 24px}
+.experience-note{font-size:12px;line-height:1.8;color:#706881;margin:19px 2px 0;max-width:920px}
+#platform{scroll-margin-top:96px}
+#interactive-beta{scroll-margin-top:110px}
+#intelligence-flow{scroll-margin-top:80px}
+.agent-state{display:inline-flex;align-self:flex-start;margin-top:13px;padding:5px 9px;border:1px solid #6551a8;border-radius:5px;background:#392d68;color:#e8deff;font-size:9px;font-weight:750;letter-spacing:.03em}
+.agent-state.planned{border-color:rgba(196,185,230,.23);background:transparent;color:#aaa1c2}
+.footer-data:empty{display:none}
+@media(max-width:980px){
+ .experience-panel .beta-frame{grid-template-columns:170px minmax(0,1fr)}
+ .experience-panel .workspace-main{padding:20px}
+ .experience-panel .workspace-sidebar{padding:20px 11px}
+ .experience-panel .source-bar{align-items:flex-start;flex-wrap:wrap}
+}
+@media(max-width:780px){
+ .experience-panel .beta-frame{display:block;min-height:0}
+ .experience-panel .workspace-sidebar{border-right:0;border-bottom:1px solid #eee8f8;display:flex;flex-direction:row;align-items:center;flex-wrap:wrap;gap:7px;padding:12px}
+ .experience-panel .workspace-brand{width:100%;margin:0 0 8px}
+ .experience-panel .side-overline,.experience-panel .sidebar-spacer,.experience-panel .sidebar-profile{display:none}
+ .experience-panel .side-btn{width:auto;margin:0;gap:7px;min-height:43px;flex:1;justify-content:center;padding:9px 8px;white-space:nowrap}
+ .experience-panel .side-btn>span:first-child{width:auto}
+ .experience-panel .workspace-main{padding:19px}
+ .experience-panel .metric-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .experience-panel .panel-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+ .experience-tabs{display:flex;width:100%}
+ .experience-tab{flex:1;font-size:11px;padding:11px 9px;gap:6px}
+ .experience-panel .workspace-main{padding:15px}
+ .experience-panel .workspace-top{align-items:flex-start;flex-wrap:wrap}
+ .experience-panel .source-bar{display:flex;gap:13px}
+ .experience-panel .source-buttons{width:100%}
+ .experience-panel .metric-grid{grid-template-columns:1fr}
+ .experience-panel .metric strong{font-size:23px}
+ .experience-panel .agent-toolbar{align-items:start;flex-direction:column}
+ .experience-panel .approval-intro{flex-wrap:wrap}
+ .experience-panel .approval-card{flex-wrap:wrap}
+ .experience-panel .ai-controls{flex-wrap:wrap}
+ .experience-panel .ai-controls input{flex-basis:100%}
+ .experience-panel .workspace-sidebar{gap:3px}
+ .experience-panel .side-btn{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){.experience-tab{transition:none}}
