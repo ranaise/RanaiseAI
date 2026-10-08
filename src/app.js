@@ -126,6 +126,7 @@ function renderDrafts(){
   }
 }
 function init(){
+  document.querySelectorAll('.mobile-menu a').forEach(link=>link.addEventListener('click',()=>{document.querySelector('.mobile-nav')?.removeAttribute('open')}));
   document.querySelectorAll('.side-btn[data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
   $('agent-role').addEventListener('change',e=>{state.role=e.target.value;renderRole()});
   $('prompt-examples').addEventListener('click',e=>{const b=e.target.closest('button[data-prompt]');if(b)ask(b.dataset.prompt)});

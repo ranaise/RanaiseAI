@@ -13,4 +13,16 @@ Old portfolio Vercel project: ranaise — preserve it.
 6. After approved QA, inspect domain assignments on the **old** Vercel project. Move ranaise.site and www.ranaise.site to the new project while keeping the old project and repo available for rollback.
 7. Confirm DNS, HTTPS/TLS, canonical redirects and any email-related records. Never replace MX/TXT records blindly.
 
+## Existing portfolio rollback snapshot (2026-10-08)
+
+- Vercel project: `ranaise` (`prj_RaSrI9dYG1y9xFZGAZKIHX1POjtD`), still linked to `ranaise/web-portofolio`.
+- Latest verified production deployment: https://ranaise-c7e9ctpgv-ranaises-projects.vercel.app (`READY`, commit `ebe09837657ac04eacd219aef595865693c99b97`).
+- Current domain assignment: `ranaise.site` redirects to `www.ranaise.site` with HTTP 308; `www.ranaise.site` serves the portfolio.
+- Vercel SSO protects the portfolio's `vercel.app` URLs. The custom domain is the public rollback route.
+- No domain or DNS changes have been made. Keep the old project, repository, deployment history, and DNS records intact.
+
+### Rollback after an approved cutover
+
+In the Vercel workspace `ranaises-projects`, open the new `ranaise-ai-beta` project's **Settings → Domains** and remove `ranaise.site` and `www.ranaise.site`. Then open the existing `ranaise` portfolio project's **Settings → Domains** and assign both domains back to it, preserving the apex-to-`www` 308 redirect. Confirm the public portfolio loads at `https://www.ranaise.site` and that `https://ranaise.site` redirects to it. Domain reassignment is sufficient; do not change nameservers or mail-related DNS records.
+
 Product descriptions must distinguish working demo flows from planned ERP/CRM/messaging connectors, enterprise access controls, and autonomous actions. This is not affiliated with NalarX.
