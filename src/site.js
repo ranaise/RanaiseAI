@@ -21,5 +21,34 @@
   document.querySelectorAll(".mobile-nav").forEach(details=>{
     details.addEventListener("keydown",event=>{if(event.key==="Escape"){details.open=false;details.querySelector("summary")?.focus();}});
   });
+  // Progressive enhancement: the page remains readable with JS disabled.
+  const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealTargets=[
+    ".hero-copy", ".flow-header", ".flow-canvas", ".section-head",
+    ".feature", ".how-heading", ".workflow-steps li", ".agents-copy",
+    ".agent-mini-grid > div", ".booking-panel", ".closing-wrap"
+  ].join(",");
+  if(!reducedMotion&&"IntersectionObserver" in window){
+    const targets=[...document.querySelectorAll(revealTargets)];
+    targets.forEach((node,i)=>{
+      node.classList.add("reveal-target");
+      node.style.setProperty("--reveal-delay",(i%4)*65+"ms");
+    });
+    const observer=new IntersectionObserver((entries)=>{
+      for(const entry of entries){
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      }
+    },{threshold:0.09,rootMargin:"0px 0px 30px 0px"});
+    // Mark elements already onscreen as visible before animation begins.
+    targets.forEach(node=>{
+      const bounds=node.getBoundingClientRect();
+      if(bounds.top<window.innerHeight&&bounds.bottom>0)node.classList.add("is-visible");
+      else observer.observe(node);
+    });
+    document.body.classList.add("motion-enabled");
+  }
   document.querySelectorAll("[data-year]").forEach(el=>{el.textContent=String(new Date().getFullYear());});
 })();
