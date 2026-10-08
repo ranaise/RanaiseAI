@@ -45,7 +45,10 @@ test("mobile navigation, keyboard support, and flexible booking panel are presen
  assert.match(js,/\.mobile-nav/);
  assert.match(js,/Escape/);
 });
-test("all working data demo remains accessible separately",()=>{
- assert.match(read("workspace.html"),/id="workspace"/);
- assert.match(read("workspace.html"),/src="\/src\/app.js"/);
+test("legacy workspace URL now forwards to the homepage beta tab",()=>{
+ const legacy=read("workspace.html");
+ assert.match(legacy,/http-equiv="refresh"/);
+ assert.match(legacy,/url=\/#interactive-beta/);
+ assert.match(read("index.html"),/id="workspace"/);
+ assert.match(read("index.html"),/id="interactive-beta"/);
 });
