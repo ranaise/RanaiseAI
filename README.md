@@ -1,27 +1,45 @@
-# Ranaise AI — Business Intelligence Agent Beta
+# Ranaise AI
 
-An independently implemented early-stage **AI intelligence workspace for business teams**, inspired by the broad business category of enterprise intelligence platforms. Not affiliated with NalarX.
+Early-stage enterprise intelligence software. Independent from NalarX and any other reference product.
 
-## Product direction
+## Public pages
+- `/`: original Ranaise enterprise landing page.
+- `/request-demo.html`: two-step early-access and demo inquiry form.
+- `/privacy.html`: privacy notice for the current beta.
+- `/workspace.html`: public **technical prototype** retaining guided Sales, Finance, and Operations calculations on sample/CSV data with local approval drafts.
 
-Bring business context into one workspace, ask role-specific questions, get evidence-backed answers, prepare work for human review, and eventually connect enterprise tools with authorization.
+No real CRM/ERP integrations, autonomous execution, enterprise login, or governed agent orchestration are offered yet. The Claude API endpoint remains disabled unless server-side credentials are added.
 
-**Available today:** responsive landing page, browser-based CSV and sample data analysis, guided Sales/Finance/Operations flows, local approval drafts. Claude analysis is optional and disabled unless explicitly configured.
+## Getting started
 
-**Not yet available:** ERP/CRM/messaging integrations, multi-tenant accounts, RBAC, SSO, autonomous execution, persistent storage, enterprise-grade protections. Do not claim these exist in a startup application.
+Node.js 20+:
 
-## Development
+```sh
+npm test
+npm run check
+npm start
+```
 
-Node.js 20+. Run `npm start` for local preview, `npm test` and `npm run check` for tests.
+For deployment, import the repository into Vercel using framework `Other`, root `./`. The GitHub-connected Vercel project can redeploy automatically on main branch updates.
 
-## Deployment
+## Form delivery
 
-Import `ranaise/RanaiseAI` into a **new** Vercel project. Use framework Other and root directory `./`; no custom build command. Verify the preview before moving `ranaise.site` or `www.ranaise.site`. Preserve the previous portfolio repo and Vercel project for rollback. Do not change DNS mail records.
+The two-stage form validates visitor input. The serverless handler at `api/demo-request.js` can email demo inquiries to the founder **only after** the following Vercel environment variables are configured:
 
-## CSV
+- `RESEND_API_KEY`: Resend email API key.
+- `DEMO_SENDER_EMAIL`: a verified sending address or domain in Resend.
+- `DEMO_NOTIFICATION_EMAIL`: the recipient mailbox, e.g. `founder@ranaise.site` (default).
 
-Header `channel,revenue,cost,orders` (optional `date`; Indonesian aliases supported). Limit 1,000 rows / 2 MB. CSV parsed locally in browser. Optional Claude endpoint transfers a summary and question, not original CSV.
+Until delivery is configured, the website **does not claim a submission was received**. It offers a prefilled `mailto:` draft for visitors to send directly.
 
-## Design
+Before enabling automatic sending broadly, add production-grade durable rate limits, an automated-abuse challenge (e.g. Turnstile), logging/privacy review, and email deliverability tests. A limited in-memory per-instance throttle is present but insufficient as the sole protection in production.
 
-Ivory, charcoal, indigo and lavender. No green. Original design and copy. Independent product, not affiliated with NalarX.
+**DNS warning:** The business email mailbox uses Zoho. Configuring a new outbound sender must be planned carefully to avoid breaking existing Zoho MX, SPF, and DKIM records. Never replace mail DNS records blindly.
+
+## Brand and IP
+
+Uses the existing Ranaise favicon paired with the **full Ranaise wordmark**. No standalone `r.` text branding. Dark charcoal, muted ivory, indigo and lavender; no green or emoji. Copy and layout are original.
+
+## Domain safety
+
+Preserve the previous portfolio project and repository. Change `ranaise.site` only after a QA-approved cutover. Read `DEPLOYMENT.md` for rollback notes.
