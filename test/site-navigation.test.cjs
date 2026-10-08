@@ -53,6 +53,22 @@ test("legacy workspace URL now forwards to the homepage beta tab",()=>{
  assert.match(read("index.html"),/id="interactive-beta"/);
 });
 
+test("public contact links use support while demo delivery stays with founder",()=>{
+ const home=read("index.html");
+ const demo=read("request-demo.html");
+ const privacy=read("privacy.html");
+ assert.match(home,/<a href="mailto:support@ranaise\.site">Contact<\/a>/);
+ assert.match(home,/class="experience-support" href="mailto:support@ranaise\.site"/);
+ assert.match(home,/class="mobile-menu"[^>]*>[\s\S]*?<a href="mailto:support@ranaise\.site">Contact support<\/a>/);
+ assert.match(demo,/class="[^"]*nav-book" href="mailto:support@ranaise\.site"/);
+ assert.match(demo,/data-mobile-menu[^>]*>[\s\S]*?<a href="mailto:support@ranaise\.site">Contact support<\/a>/);
+ assert.match(demo,/class="footer-links"[^>]*>[\s\S]*?<a href="mailto:support@ranaise\.site">Contact<\/a>/);
+ assert.match(demo,/id="email-draft" href="mailto:founder@ranaise\.site"/);
+ assert.match(privacy,/mailto:support@ranaise\.site">support@ranaise\.site<\/a>/);
+ assert.match(privacy,/class="footer-links"[^>]*>[\s\S]*?<a href="mailto:support@ranaise\.site">Contact<\/a>/);
+ assert.match(read("api/demo-request.js"),/DEMO_NOTIFICATION_EMAIL \|\| "founder@ranaise\.site"/);
+});
+
 
 test("Interactive Beta sidebar has only consistent text labels",()=>{
  const home=read("index.html");

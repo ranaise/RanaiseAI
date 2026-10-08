@@ -8,6 +8,8 @@
 .experience-panel[hidden]{display:none!important}
 .experience-panel .beta-frame{margin:0;min-height:570px}
 .experience-intro{font-size:14px;line-height:1.85;color:#706980;max-width:850px;margin:0 0 24px}
+.experience-support{display:inline-block;margin:-10px 0 24px;color:var(--plum);font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.experience-support:hover{text-decoration-thickness:2px}
 .experience-note{font-size:12px;line-height:1.8;color:#706881;margin:19px 2px 0;max-width:920px}
 #platform{scroll-margin-top:96px}
 #interactive-beta{scroll-margin-top:110px}
