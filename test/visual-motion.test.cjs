@@ -9,8 +9,9 @@ const script=read("src/site.js");
 test("illustrated story has descriptive, accurate beta scope",()=>{
  assert.match(html,/id="intelligence-flow"/);
  assert.match(html,/class="flow-canvas"/);
- assert.match(html,/Concept illustration/);
- assert.match(html,/external systems and automatic actions are not connected/);
+ assert.match(html,/id="interactive-beta"/);
+ assert.match(html,/id="experience-beta"/);
+ assert.match(html,/CSV stays in your browser/);
 });
 test("animation styles include accessibility and responsive limits",()=>{
  assert.match(motion,/@media\(prefers-reduced-motion:reduce\)/);
@@ -34,4 +35,31 @@ test("custom graphics exist in all feature cards",()=>{
 test("no broken homepage fragment targets",()=>{
  for(const [,target] of html.matchAll(/href="#([^"]+)"/g))
    assert.ok(html.includes('id="'+target+'"'),target);
+});
+
+
+test("the real guided beta is accessible inside homepage tabs",()=>{
+ assert.match(html,/id="workspace"/);
+ assert.match(html,/id="csv-upload"/);
+ assert.match(html,/id="view-ask"/);
+ assert.match(html,/id="view-approvals"/);
+ assert.match(html,/src="\/src\/analysis.js"/);
+ assert.match(html,/src="\/src\/app.js"/);
+ assert.match(read("src/site.js"),/aria-selected/);
+ assert.match(read("src/experience.css"),/experience-panel\[hidden\]/);
+});
+test("How it works targets an illustrative explanation",()=>{
+ assert.match(html,/href="#intelligence-flow"/);
+ assert.doesNotMatch(html,/href="#how-it-works"/);
+});
+test("removed technical marketing disclaimers stay removed",()=>{
+ const forbidden=[
+  "EARLY ACCESS · RANAISE AI",
+  "Early-stage product. Guided analysis is available",
+  "Concept illustration. The public beta",
+  "Built with a human in the loop",
+  "Independent early-stage software project",
+  "Technical preview"
+ ];
+ for(const phrase of forbidden)assert.ok(!html.includes(phrase),phrase);
 });
