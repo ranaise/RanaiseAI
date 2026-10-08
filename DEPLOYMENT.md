@@ -10,8 +10,10 @@ Old portfolio Vercel project: ranaise — preserve it.
 3. Test deployment on the assigned *.vercel.app URL before changing domains.
 4. Verify UI on desktop/mobile, CSV uploads, Sales/Finance/Operations guided analysis, approvals, and API-disabled state.
 5. Optional Claude beta requires secure server environment variables ANTHROPIC_API_KEY and BETA_ACCESS_CODE (12+ characters). Do not enable without rate limiting and cost controls.
-6. After approved QA, inspect domain assignments on the **old** Vercel project. Move ranaise.site and www.ranaise.site to the new project while keeping the old project and repo available for rollback.
-7. Confirm DNS, HTTPS/TLS, canonical redirects and any email-related records. Never replace MX/TXT records blindly.
+6. For automatic Book a Demo email, configure the new project's Production environment with `RESEND_API_KEY` (secret), `DEMO_SENDER_EMAIL` (`forms@notify.ranaise.site` after verification), and `DEMO_NOTIFICATION_EMAIL` (`founder@ranaise.site`). Verify the sending subdomain in Resend and add only its requested DNS records; leave all existing Zoho MX, SPF, DKIM, DMARC, and verification records intact.
+7. Create a Cloudflare Turnstile widget limited to `ranaise.site`, `www.ranaise.site`, and `ranaise-ai-beta.vercel.app`. Set `TURNSTILE_SITE_KEY` (public), `TURNSTILE_SECRET_KEY` (secret), and `TURNSTILE_ALLOWED_HOSTS` to those exact hostnames. The API checks every token with Cloudflare Siteverify before calling Resend. Do not remove that server-side check.
+8. After successful form and site QA, inspect domain assignments on the **old** Vercel project. Move ranaise.site and www.ranaise.site to the new project while keeping the old project and repo available for rollback.
+9. Confirm DNS, HTTPS/TLS, canonical redirects and any email-related records. Never replace MX/TXT records blindly.
 
 ## Existing portfolio rollback snapshot (2026-10-08)
 

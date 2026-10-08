@@ -5,7 +5,7 @@ import {resolve, sep, extname} from 'node:path';
 const root=process.cwd(), port=Number(process.env.PORT)||4173;
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'application/javascript; charset=utf-8','.svg':'image/svg+xml','.json':'application/json'};
 createServer(async(req,res)=>{
-  if((req.url||'').startsWith('/api/')){res.writeHead(503,{'Content-Type':'application/json'});res.end(JSON.stringify({error:'Claude API is not enabled in local preview.'}));return;}
+  if((req.url||'').startsWith('/api/')){const path=(req.url||'').split('?')[0];const message=path==='/api/turnstile-config'?'Security verification is not configured in local preview.':path==='/api/demo-request'?'Automatic email delivery is not configured in local preview.':'API routes are active only on Vercel.';res.writeHead(503,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify({error:message}));return;}
   let url;
   try {url=decodeURIComponent((req.url||'/').split('?')[0]);} catch{res.writeHead(400);res.end('Bad request');return;}
   const path=resolve(root,'.'+(url==='/'?'/index.html':url));
