@@ -50,3 +50,8 @@
  .experience-panel .side-btn{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.experience-tab{transition:none}}
+
+/* Keep the three workspace navigation actions visually aligned without decorative counters. */
+.experience-panel .side-btn{justify-content:flex-start;gap:0}
+.experience-panel .chat-orb img{width:23px;height:23px;object-fit:contain;border-radius:6px}
+@media(max-width:780px){.experience-panel .side-btn{justify-content:center}}
