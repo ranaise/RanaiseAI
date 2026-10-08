@@ -128,3 +128,39 @@
   .feature,.agent-mini-grid>div,.workflow-steps li,.flow-item,.reveal-target{transition:none!important}
   .motion-enabled .reveal-target{transform:none!important;opacity:1!important}
 }
+
+/* Bespoke micro-illustrations for the three product capability cards. */
+.feature-art{height:116px;flex:none;margin-top:18px;border:1px solid #eeeaf9;border-radius:13px;position:relative;overflow:hidden;background:linear-gradient(125deg,#f8f6ff,#fff);isolation:isolate}
+.feature-art:before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,#e9e4f75a 1px,transparent 1px),linear-gradient(#e9e4f75a 1px,transparent 1px);background-size:22px 22px;opacity:.6}
+.feature .feature-art+h3{margin-top:22px}
+.art-context{display:flex;align-items:center;justify-content:space-around;gap:16px;padding:14px 25px}
+.mini-source-stack{z-index:1;display:grid;gap:6px;width:77px}
+.mini-source-stack span{background:#fff;border:1px solid #e2def1;box-shadow:0 3px 7px rgba(69,51,115,.05);border-radius:5px;padding:5px;color:#807299;font-size:8px;letter-spacing:.08em;text-align:center;font-weight:700}
+.mini-source-stack span:nth-child(2){margin-left:9px}.mini-source-stack span:nth-child(3){margin-left:16px}
+.mini-wire{position:absolute;left:37%;right:26%;top:50%;border-top:2px dashed #a591e9;animation:signal-route 8s linear infinite;opacity:.7}
+.mini-core{position:relative;z-index:1;display:grid;place-items:center;width:59px;height:59px;border:1px solid #d9d0f8;background:#f5f2ff;border-radius:50%;box-shadow:0 0 0 11px rgba(209,200,250,.3)}
+.mini-core img{width:34px;height:34px;border-radius:10px}
+.mini-glow{position:absolute;right:7%;width:100px;height:90px;filter:blur(28px);background:#d9d2fe;opacity:.35}
+.art-analysis{display:flex;align-items:end;padding:17px 22px}
+.mini-bars{height:76px;display:flex;align-items:flex-end;gap:9px;width:60%;position:relative;z-index:1}
+.mini-bars i{height:var(--bar-h);width:14%;border-radius:5px 5px 2px 2px;background:linear-gradient(180deg,#a597f2,#6c58cb);transform-origin:bottom;animation:bar-rise 1.25s cubic-bezier(.2,.8,.2,1) backwards;opacity:.88}
+.mini-bars i:nth-child(2n){animation-delay:.12s}
+.mini-bars i:nth-child(3n){animation-delay:.2s}
+.mini-chart-caption{position:absolute;right:18px;top:17px;font-size:8px;letter-spacing:1px;color:#8071a0;font-weight:800}
+.mini-chart-trend{position:absolute;right:18px;bottom:13px;width:105px;color:#7764cf}
+.mini-chart-trend svg{width:100%}
+.art-review{display:grid;place-items:center}
+.mini-review-sheet{background:#fff;position:relative;z-index:1;border:1px solid #e0d7f2;box-shadow:0 9px 24px rgba(75,60,119,.11);border-radius:9px;padding:11px 13px;width:80%;max-width:220px}
+.mini-sheet-heading{display:block;font-size:7px;letter-spacing:.08em;color:#786aa0;font-weight:800;margin-bottom:8px}
+.mini-sheet-line{height:5px;border-radius:10px;background:#ece8f7;width:100%;display:block;margin:6px 0}
+.mini-sheet-line.short{width:64%}
+.mini-sheet-actions{display:flex;gap:7px;margin-top:9px}
+.mini-sheet-actions i{font-style:normal;font-size:7px;font-weight:700;border-radius:4px;padding:4px 11px;background:#e8e2ff;color:#6855ad}
+.mini-sheet-actions i+ i{background:#f6f3fb;color:#9188a1}
+.mini-review-cursor{position:absolute;right:16%;bottom:7px;z-index:2;animation:review-pointer 4.5s ease-in-out infinite}
+.mini-review-cursor svg{width:25px;height:25px;filter:drop-shadow(0 3px 5px #3c2b7660)}
+@keyframes bar-rise{from{transform:scaleY(.05)}to{transform:scaleY(1)}}
+@keyframes review-pointer{0%,100%{transform:translate(0,0)}50%{transform:translate(-10px,-8px)}}
+@media(max-width:980px){.feature-art{height:100px}.art-context{padding:11px 18px}}
+@media(max-width:680px){.feature-art{height:112px}.mini-core{width:52px;height:52px}}
+@media(prefers-reduced-motion:reduce){.mini-bars i,.mini-review-cursor,.mini-wire{animation:none!important}}
