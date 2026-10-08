@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101015">
+<meta name="robots" content="index,follow">
+<meta name="description" content="Request a Ranaise AI demo. Tell us about your team and the business workflows you want to improve.">
+<title>Book a demo | Ranaise</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/src/site.css">
+<script src="/src/site.js" defer></script>
+<script src="/src/request-demo.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-nav"><div class="shell site-nav-inner"><a class="logo" href="/" aria-label="Ranaise home"><img src="/assets/favicon.svg" alt=""><span>Ranaise</span></a><nav class="main-links" aria-label="Main navigation"><a href="/#platform">Platform</a><a href="/#capabilities">Capabilities</a><a href="/#how">How it works</a><a href="/#agents">Agents</a></nav><a class="btn btn-ghost nav-book" href="mailto:founder@ranaise.site">Contact us <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 17 10-10M8 7h9v9"/></svg></a><button type="button" class="menu-toggle" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-links">☰</button></div><nav class="mobile-links" id="mobile-links" data-mobile-menu aria-label="Mobile navigation"><a href="/#platform">Platform</a><a href="/#capabilities">Capabilities</a><a href="/#how">How it works</a><a href="/#agents">Agents</a></nav></header>
+<main id="main" class="access-page">
+ <div class="access-layout">
+  <div class="kicker">Conversations begin here</div>
+  <h1>Let's make<br><em>work clearer.</em></h1>
+  <p class="access-lead">Ranaise is in early beta. Tell us a little about your team and the information you wish were easier to work with. We'll review your request and follow up when a conversation is possible.</p>
+  <form id="demo-form" autocomplete="on">
+   <div class="honeypot" aria-hidden="true"><label for="website">Leave this field blank</label><input type="text" name="website" id="website" tabindex="-1" autocomplete="off"></div>
+   <section data-step="1" aria-label="Your contact information">
+    <div class="access-stephead"><span>01 / Your details</span><div class="step-track" aria-label="Step 1 of 2"><span class="active"></span><span></span></div></div>
+    <div class="field-grid">
+     <div class="field full"><label for="full-name">Full name <span aria-hidden="true">*</span></label><input id="full-name" name="name" placeholder="Your full name" autocomplete="name" maxlength="100" required></div>
+     <div class="field full"><label for="work-email">Work email <span aria-hidden="true">*</span></label><input id="work-email" name="email" type="email" inputmode="email" placeholder="you@company.com" autocomplete="email" maxlength="180" required></div>
+     <div class="field"><label for="company">Organization <span aria-hidden="true">*</span></label><input id="company" name="company" placeholder="Company or team" autocomplete="organization" maxlength="120" required></div>
+     <div class="field"><label for="whatsapp">WhatsApp <span class="optional">(optional)</span></label><input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" placeholder="+62..." maxlength="30"></div>
+    </div>
+    <div class="access-actions"><button class="btn btn-solid primary" id="next-step" type="button">Continue to your team <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div>
+   </section>
+   <section data-step="2" aria-label="About your organization" hidden>
+    <div class="access-stephead"><span>02 / What you are building</span><div class="step-track" aria-label="Step 2 of 2"><span class="active"></span><span class="active"></span></div></div>
+    <div class="field-grid">
+     <div class="field"><label for="role">Your role <span aria-hidden="true">*</span></label><select id="role" name="role" required><option value="">Select your role</option><option>Founder / Owner</option><option>Leadership / Executive</option><option>Operations</option><option>Sales / Growth</option><option>Finance</option><option>Technology / Data</option><option>Other</option></select></div>
+     <div class="field"><label for="industry">Industry <span aria-hidden="true">*</span></label><select id="industry" name="industry" required><option value="">Select industry</option><option>Technology / SaaS</option><option>Retail / Commerce</option><option>Manufacturing</option><option>Professional services</option><option>Financial services</option><option>Healthcare</option><option>Logistics / Supply chain</option><option>Education</option><option>Other</option></select></div>
+     <div class="field"><label for="company-size">Team size <span aria-hidden="true">*</span></label><select id="company-size" name="companySize" required><option value="">Number of people</option><option>1–10</option><option>11–50</option><option>51–200</option><option>201–1,000</option><option>1,001+</option></select></div>
+     <div class="field"><label for="revenue">Annual revenue <span class="optional">(optional)</span></label><select id="revenue" name="annualRevenue"><option value="">Prefer not to say</option><option>Pre-revenue / early stage</option><option>Under USD 100k</option><option>USD 100k–1M</option><option>USD 1M–10M</option><option>Over USD 10M</option></select></div>
+    </div>
+    <fieldset class="fieldset"><legend>Which tools does your team use? <span class="optional">(optional)</span></legend><div class="chip-grid">
+     <label class="chip"><input name="tools" type="checkbox" value="Spreadsheets"><span>Spreadsheets</span></label>
+     <label class="chip"><input name="tools" type="checkbox" value="WhatsApp"><span>WhatsApp</span></label>
+     <label class="chip"><input name="tools" type="checkbox" value="Accounting"><span>Accounting tools</span></label>
+     <label class="chip"><input name="tools" type="checkbox" value="CRM"><span>CRM</span></label>
+     <label class="chip"><input name="tools" type="checkbox" value="ERP"><span>ERP</span></label>
+     <label class="chip"><input name="tools" type="checkbox" value="Internal systems"><span>Internal systems</span></label>
+     <label class="chip"><input name="tools" type="checkbox" value="Mostly manual"><span>Mostly manual</span></label>
+    </div></fieldset>
+    <div class="field-grid">
+     <div class="field full"><label for="timeline">When would you like to explore a solution? <span aria-hidden="true">*</span></label><select id="timeline" name="timeline" required><option value="">Choose a timeline</option><option>As soon as possible</option><option>Within 1–3 months</option><option>Within 3–6 months</option><option>Just exploring</option></select></div>
+     <div class="field full"><label for="challenge">What decision or workflow should we understand first? <span class="optional">(optional)</span></label><textarea id="challenge" name="challenge" maxlength="1200" placeholder="For example, bringing customer, sales, and operational context together for a weekly review."></textarea></div>
+    </div>
+    <p class="form-help"><label><input type="checkbox" id="consent" name="consent" required style="accent-color:#a79bff;margin-right:7px">I agree to be contacted about my request. I have read the <a href="/privacy.html" target="_blank" rel="noopener">Privacy Notice</a>.</label></p>
+    <div class="access-actions"><button class="btn btn-outline btn-secondary" type="button" id="previous-step">Back</button><button class="btn btn-solid primary" type="submit" id="submit-demo">Request a demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div>
+   </section>
+   <div id="form-error" class="error-box" role="alert" hidden></div>
+   <div id="email-fallback" class="fallback" hidden><p>Automatic submission has not been enabled yet. No request has been sent. You can open a prepared email and send it from your own email app instead.</p><a id="email-draft" href="mailto:founder@ranaise.site">Open prepared email</a></div>
+  </form>
+  <div id="form-success" class="form-success" role="status" hidden><h2>Request received.</h2><p>Thank you for reaching out. Your details were delivered to the Ranaise contact inbox. We will reply if your request is a fit for the current beta.</p><a href="/" class="btn btn-outline">Return to Ranaise</a></div>
+ </div>
+</main>
+<footer class="footer"><div class="shell footer-inner"><a href="/" class="logo logo-sm"><img src="/assets/favicon.svg" alt=""><span>Ranaise</span></a><div class="footer-links"><a href="/">Platform</a><a href="/privacy.html">Privacy</a><a href="mailto:founder@ranaise.site">Contact</a></div><small class="legal-footer">&copy; <span data-year>2026</span> Ranaise.</small></div></footer>
+</body>
+</html>
