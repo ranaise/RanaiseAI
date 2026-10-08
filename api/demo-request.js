@@ -188,7 +188,17 @@ module.exports = async function handler(req, res) {
       result = null;
     }
     if (!response.ok || !result || typeof result.id !== "string") {
-      console.error("Demo delivery failed, status:", response.status);
+      const providerMessage = typeof result?.message === "string"
+        ? result.message
+          .replace(/[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/g, "[redacted email]")
+          .replace(/[\r\n\t]+/g, " ")
+          .slice(0, 240)
+        : "No provider message";
+      console.error("Demo delivery failed:", JSON.stringify({
+        status: response.status,
+        name: typeof result?.name === "string" ? result.name.slice(0, 80) : "Unknown",
+        message: providerMessage
+      }));
       return json(res, 502, { error: "Email delivery unavailable. Please retry or use the email option." });
     }
     return json(res, 200, { ok: true, message: "Request accepted for email delivery." });
@@ -199,3 +209,4 @@ module.exports = async function handler(req, res) {
     clearTimeout(timer);
   }
 };
+
