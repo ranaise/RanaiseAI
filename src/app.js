@@ -102,8 +102,7 @@ function ask(value){
   renderRole();$('question').value='';
 }
 function renderDrafts(){
-  const pending=state.drafts.filter(x=>x.status==='Pending review').length;
-  $('approval-count').textContent=String(pending);
+
   const root=$('approval-list');root.replaceChildren();
   if(!state.drafts.length){
     const empty=document.createElement('div');empty.className='approval-empty';
