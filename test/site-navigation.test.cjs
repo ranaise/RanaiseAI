@@ -52,3 +52,40 @@ test("legacy workspace URL now forwards to the homepage beta tab",()=>{
  assert.match(read("index.html"),/id="workspace"/);
  assert.match(read("index.html"),/id="interactive-beta"/);
 });
+
+
+test("Interactive Beta sidebar has only consistent text labels",()=>{
+ const home=read("index.html");
+ const app=read("src/app.js");
+ assert.match(home,/<button[^>]+data-view="overview"[^>]*>Overview<\/button>/);
+ assert.match(home,/<button[^>]+data-view="ask"[^>]*>Ask an agent<\/button>/);
+ assert.match(home,/<button[^>]+data-view="approvals"[^>]*>Approvals<\/button>/);
+ assert.doesNotMatch(home,/id="approval-count"|Guided analysis · local beta/);
+ assert.doesNotMatch(app,/approval-count/);
+ assert.match(home,/chat-orb"><img src="\/assets\/favicon.svg"/);
+});
+test("navbar follows actual vertical section order across public pages",()=>{
+ const expected=[
+   ["How it works","#intelligence-flow"],
+   ["Product","#platform"],
+   ["Interactive Beta","#interactive-beta"],
+   ["AI agents","#agents"]
+ ];
+ const site=read("index.html");
+ for(const page of ["index.html","request-demo.html","privacy.html"]){
+  const html=read(page);
+  const nav=html.match(/<nav class="nav-links"[^>]*>([\s\S]*?)<\/nav>/)?.[1]
+    || html.match(/<nav class="main-links"[^>]*>([\s\S]*?)<\/nav>/)?.[1];
+  assert.ok(nav,"navbar missing from "+page);
+  let last=-1;
+  for(const [label,target] of expected){
+   const link=target[0]==="#"&&page!=="index.html"?"/"+target:target;
+   const marker='href="'+link+'">'+label+"</a>";
+   const at=nav.indexOf(marker);
+   assert.ok(at>last,page+": "+label+" out of order or missing");
+   last=at;
+  }
+ }
+ for(const anchor of expected.map(x=>x[1].slice(1)))
+  assert.ok(site.includes('id="'+anchor+'"'));
+});
