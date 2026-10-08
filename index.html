@@ -30,24 +30,26 @@
   <link rel="stylesheet" href="/src/styles.css" />
   <link rel="stylesheet" href="/src/motion.css" />
   <script defer src="/src/site.js"></script>
+  <script defer src="/src/analysis.js"></script>
+  <script defer src="/src/app.js"></script>
   
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
 <header class="header"><div class="container nav">
   <a class="brand" href="#top" aria-label="Ranaise homepage"><img class="brand-mark" src="/assets/favicon.svg" alt="" /><span class="brand-wordmark">Ranaise</span></a>
-  <nav class="nav-links" aria-label="Main navigation"><a href="#platform">Product</a><a href="#agents">AI agents</a><a href="#how-it-works">How it works</a><a href="/request-demo.html">Book a demo</a></nav>
-  <details class="mobile-nav"><summary aria-label="Toggle navigation"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg><span>Menu</span></summary><nav class="mobile-menu" aria-label="Mobile navigation"><a href="#platform">Product</a><a href="#agents">AI agents</a><a href="#how-it-works">How it works</a><a href="/request-demo.html">Book a demo</a></nav></details>
+  <nav class="nav-links" aria-label="Main navigation"><a href="#platform">Product</a><a href="#agents">AI agents</a><a href="#intelligence-flow">How it works</a><a href="#interactive-beta">Interactive Beta</a><a href="/request-demo.html">Book a demo</a></nav>
+  <details class="mobile-nav"><summary aria-label="Toggle navigation"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg><span>Menu</span></summary><nav class="mobile-menu" aria-label="Mobile navigation"><a href="#platform">Product</a><a href="#agents">AI agents</a><a href="#intelligence-flow">How it works</a><a href="#interactive-beta">Interactive Beta</a><a href="/request-demo.html">Book a demo</a></nav></details>
   <a class="btn btn-small btn-dark" href="/request-demo.html">Book a demo <span aria-hidden="true">→</span></a>
 </div></header>
 <main id="main">
   <section class="hero container" id="top">
     <div class="hero-copy">
-      <div class="eyebrow"><span class="status-dot"></span> EARLY ACCESS · RANAISE AI</div>
+      
       <h1>One place to<br />understand <em>your business.</em></h1>
       <p class="lead">Ranaise is building a clearer way to understand business information across teams. Explore insights with specialist perspectives and keep people in control of every next step.</p>
-      <div class="hero-actions"><a class="btn btn-dark" href="/request-demo.html">Book a demo <span aria-hidden="true">→</span></a><a class="plain-link" href="#how-it-works">See how it works <span aria-hidden="true">→</span></a></div>
-      <p class="small-note">Early-stage product. Guided analysis is available; enterprise integrations are in development.</p>
+      <div class="hero-actions"><a class="btn btn-dark" href="/request-demo.html">Book a demo <span aria-hidden="true">→</span></a><a class="plain-link" href="#intelligence-flow">See how it works <span aria-hidden="true">→</span></a></div>
+      
     </div>
     <div class="hero-visual" aria-label="Concept preview of Ranaise intelligence workspace">
       <div class="scene-aura" aria-hidden="true"></div>
@@ -102,20 +104,57 @@
           <div class="flow-item"><span class="flow-item-icon output">03</span><div><strong>Review &amp; decide</strong><small>No automatic execution</small></div></div>
         </div>
       </div>
-      <p class="flow-disclaimer">Concept illustration. The public beta supports guided analysis with sample or CSV data; external systems and automatic actions are not connected.</p>
+      
     </div>
   </section>
 
   <section class="section container" id="platform">
     <div class="section-head"><div><span class="overline">THE IDEA</span><h2>Less switching.<br /><em>More understanding.</em></h2></div><p>From ERP and CRM to spreadsheets and messaging, our vision is one governed intelligence layer that helps teams analyze, delegate, and act.</p></div>
-    <div class="feature-grid">
-      <article class="feature"><div class="feature-icon icon-violet">01</div><div class="feature-art art-context" aria-hidden="true"><div class="mini-source-stack"><span>DATA</span><span>FILES</span><span>TEAMS</span></div><span class="mini-wire"></span><span class="mini-core"><img src="/assets/favicon.svg" alt="" /></span><span class="mini-glow"></span></div><h3>Bring your context together</h3><p>Start with files in the beta. Future connectors will link the systems you already use, without replacing them.</p><span class="feature-foot">CSV available · connectors planned</span></article>
-      <article class="feature"><div class="feature-icon icon-blue">02</div><div class="feature-art art-analysis" aria-hidden="true"><div class="mini-bars"><i style="--bar-h:32%"></i><i style="--bar-h:65%"></i><i style="--bar-h:50%"></i><i style="--bar-h:83%"></i><i style="--bar-h:60%"></i><i style="--bar-h:95%"></i><i style="--bar-h:71%"></i></div><span class="mini-chart-caption">SIGNAL / ANALYSIS</span><span class="mini-chart-trend"><svg viewBox="0 0 110 42"><path d="M2 36 22 29 38 32 55 20 73 23 91 6 108 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><h3>Ask across your work</h3><p>Guided questions calculate from the sample or CSV you load. No answer relies on a connected company system.</p><span class="feature-foot">Guided insights available</span></article>
-      <article class="feature"><div class="feature-icon icon-pink">03</div><div class="feature-art art-review" aria-hidden="true"><div class="mini-review-sheet"><span class="mini-sheet-heading">RECOMMENDATION DRAFT</span><span class="mini-sheet-line"></span><span class="mini-sheet-line short"></span><span class="mini-sheet-actions"><i>Review</i><i>Hold</i></span></div><span class="mini-review-cursor"><svg viewBox="0 0 24 24"><path d="m5 3 4 16 3.4-6.3L19 9 5 3Z" fill="#6952ca" stroke="#fff" stroke-width="1.4"/></svg></span></div><h3>Keep people in control</h3><p>Agent workflows can prepare next steps for review. No external actions are performed by the public demo.</p><span class="feature-foot">Local approvals prototype</span></article>
+    <div class="experience-tabs" role="tablist" aria-label="Explore Ranaise">
+      <button type="button" id="overview-tab" class="experience-tab is-active" role="tab" aria-selected="true" aria-controls="experience-overview" tabindex="0">Platform Overview</button>
+      <button type="button" id="interactive-beta" class="experience-tab" role="tab" aria-selected="false" aria-controls="experience-beta" tabindex="-1">Interactive Beta <span aria-hidden="true">→</span></button>
+    </div>
+    <div class="experience-panel" id="experience-overview" role="tabpanel" aria-labelledby="overview-tab">
+      <div class="feature-grid">
+      <article class="feature"><div class="feature-icon icon-violet">01</div><div class="feature-art art-context" aria-hidden="true"><div class="mini-source-stack"><span>SALES</span><span>FINANCE</span><span>OPERATIONS</span></div><span class="mini-wire"></span><span class="mini-core"><img src="/assets/favicon.svg" alt="" /></span><span class="mini-glow"></span></div><h3>See the full picture</h3><p>Explore your business data in one clear view and understand what matters across teams.</p><span class="feature-foot">Business context</span></article>
+      <article class="feature"><div class="feature-icon icon-blue">02</div><div class="feature-art art-analysis" aria-hidden="true"><div class="mini-bars"><i style="--bar-h:32%"></i><i style="--bar-h:65%"></i><i style="--bar-h:50%"></i><i style="--bar-h:83%"></i><i style="--bar-h:60%"></i><i style="--bar-h:95%"></i><i style="--bar-h:71%"></i></div><span class="mini-chart-caption">PERFORMANCE INSIGHTS</span><span class="mini-chart-trend"><svg viewBox="0 0 110 42"><path d="M2 36 22 29 38 32 55 20 73 23 91 6 108 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><h3>Find answers in your data</h3><p>Turn key business questions into clear findings grounded in the numbers you provide.</p><span class="feature-foot">Explainable analysis</span></article>
+      <article class="feature"><div class="feature-icon icon-pink">03</div><div class="feature-art art-review" aria-hidden="true"><div class="mini-review-sheet"><span class="mini-sheet-heading">NEXT STEP</span><span class="mini-sheet-line"></span><span class="mini-sheet-line short"></span><span class="mini-sheet-actions"><i>Review</i><i>Decide</i></span></div><span class="mini-review-cursor"><svg viewBox="0 0 24 24"><path d="m5 3 4 16 3.4-6.3L19 9 5 3Z" fill="#6952ca" stroke="#fff" stroke-width="1.4"/></svg></span></div><h3>Make the next move yours</h3><p>Review suggested next steps and decide what makes sense for your business.</p><span class="feature-foot">Human review</span></article>
+    </div>
+    </div>
+    <div class="experience-panel" id="experience-beta" role="tabpanel" aria-labelledby="interactive-beta" hidden>
+      <p class="experience-intro">Explore how Ranaise works with sample data or upload your own CSV. Choose a business perspective, ask a question and review a suggested next step.</p>
+      <div class="beta-frame" id="workspace">
+      <aside class="workspace-sidebar"><div class="workspace-brand"><span class="workspace-logo"><img src="/assets/favicon.svg" alt="" /></span><div><strong>Ranaise</strong><small>Interactive Beta</small></div></div><div class="side-overline">WORKSPACE</div>
+        <button type="button" class="side-btn is-active" data-view="overview" aria-pressed="true"><span></span> Overview</button>
+        <button type="button" class="side-btn" data-view="ask" aria-pressed="false"><span>02</span> Ask an agent</button>
+        <button type="button" class="side-btn" data-view="approvals" aria-pressed="false"><span></span> Approvals <span id="approval-count" class="count-pill">0</span></button>
+        <div class="sidebar-spacer"></div><div class="sidebar-profile"><span class="profile-avatar"><img src="/assets/favicon.svg" alt="" /></span><div><strong>Demo workspace</strong><small>Local browser session</small></div></div>
+      </aside>
+      <div class="workspace-main">
+        <div class="workspace-top"><div><div class="crumb">RANAISE / <span id="crumb-current">OVERVIEW</span></div><h3 id="view-title">Workspace overview</h3></div><span class="beta-tag">INTERACTIVE BETA</span></div>
+        <div class="workspace-notice"><span class="notice-icon">i</span><span>Explore sample or uploaded CSV data. Results are generated from the records available in your browser.</span></div>
+        <section class="workspace-view" id="view-overview">
+          <div class="source-bar"><div><strong id="source-title">Sample workspace</strong><small id="source-subtitle">8 example sales records · Local data</small></div><div class="source-buttons"><button class="small-btn" id="reset-sample" type="button">Reset sample</button><label class="small-btn small-btn-emphasis" for="csv-upload">Upload CSV</label><input type="file" id="csv-upload" accept=".csv,text/csv" /></div></div>
+          <p class="error-message" id="file-error" role="alert" hidden></p>
+          <div class="metric-grid"><div class="metric"><span>Revenue</span><strong id="metric-revenue">—</strong><small>From the loaded records</small></div><div class="metric"><span>Reported cost</span><strong id="metric-cost">—</strong><small>From the loaded records</small></div><div class="metric"><span>Gross margin</span><strong id="metric-margin">—</strong><small>Before other expenses</small></div></div>
+          <div class="panel-grid"><div class="panel"><div class="panel-heading"><strong>Revenue by channel</strong><span>Calculated from data</span></div><div class="bar-list" id="channel-bars"></div></div><div class="panel quick-panel"><div class="panel-heading"><strong>Where to start</strong><span>Guided analysis</span></div><p>Ask a role-based agent to review these numbers and prepare a draft next step.</p><div class="suggested-question" id="quick-question">Which channel brings the most revenue?</div><button type="button" id="ask-from-overview" class="small-btn small-btn-emphasis">Ask Sales Agent →</button></div></div>
+          <p class="dataset-help">Own CSV? Use <code>channel,revenue,cost,orders</code> columns. Parsed locally in your browser. Up to 1,000 records / 2 MB.</p>
+        </section>
+        <section class="workspace-view" id="view-ask" hidden>
+          <div class="agent-toolbar"><div><label class="input-label" for="agent-role">SPECIALIST</label><select id="agent-role"><option value="sales">Sales Agent</option><option value="finance">Finance Agent</option><option value="operations">Operations Agent</option></select></div><span class="agent-mode"><span class="mode-dot"></span> Guided analysis · local beta</span></div>
+          <div class="chat-panel"><div class="chat-heading"><span class="chat-orb">02</span><div><strong id="agent-intro">Sales Agent</strong><small>Sample-backed, explainable responses</small></div></div><div class="chat-log" id="chat-log" aria-live="polite"></div>
+            <div class="prompt-examples" id="prompt-examples"><button type="button" data-prompt="Which channel leads sales?">Top channel</button><button type="button" data-prompt="Summarize sales performance">Sales overview</button><button type="button" data-prompt="Prepare a sales review">Draft next step</button></div>
+            <form id="ask-form" class="ask-form"><label class="sr-only" for="question">Ask a business question</label><input id="question" maxlength="500" placeholder="Ask something about your business data…" autocomplete="off" required /><button type="submit" aria-label="Send question">↗</button></form>
+          </div><div class="ai-expander"><details><summary>Optional Claude-powered analysis <span>↗</span></summary><p>Live AI is disabled unless an operator configures Anthropic credentials and a beta access code on the server. Only an aggregate data summary and your question are sent, never the original CSV file.</p><div class="ai-controls"><label class="sr-only" for="beta-code">Beta access code</label><input id="beta-code" type="password" placeholder="Beta access code (if invited)" autocomplete="off" /><button class="small-btn" id="ask-claude" type="button">Ask Claude</button></div><p class="ai-output" id="claude-answer" role="status">No live AI requests have been made.</p></details></div>
+        </section>
+        <section class="workspace-view" id="view-approvals" hidden><div class="approval-intro"><div><strong>Human review, by design.</strong><p>Agents can draft recommended next steps. In this demo, approvals only change the local display and never contact external services.</p></div><button type="button" id="create-draft" class="small-btn small-btn-emphasis">+ Create a draft</button></div><div id="approval-list" class="approval-list"></div><p class="dataset-help">Drafts are temporary and reset on page reload. No data is stored on a server.</p></section>
+      </div>
+    </div>
+      <p class="experience-note">Your CSV stays in your browser. Guided responses use the data you provide. Reviewing a draft does not trigger actions in external systems.</p>
     </div>
   </section>
   <section class="how-section container" id="how-it-works" aria-labelledby="how-title">
-    <div class="how-heading"><div><span class="overline">HOW IT WORKS</span><h2 id="how-title">A clear path from data<br /><em>to reviewed next steps.</em></h2></div><p>The beta keeps each step visible, from local data input to a draft you can approve or dismiss.</p></div>
+    <div class="how-heading"><div><span class="overline">HOW IT WORKS</span><h2 id="how-title">A clear path from data<br /><em>to reviewed next steps.</em></h2></div><p>See how Ranaise turns business information into a clearer basis for your next decision.</p></div>
     <ol class="workflow-steps">
       <li><span class="step-number">01</span><div><strong>Provide business context</strong><p>Use the sample records or load a CSV. Your file stays in the browser.</p></div></li>
       <li><span class="step-number">02</span><div><strong>Explore guided analysis</strong><p>Choose Sales, Finance, or Operations and ask questions answered from the loaded data.</p></div></li>
@@ -124,11 +163,11 @@
   </section>
 
 
-  <section class="agents-area" id="agents"><div class="container agents-wrap"><div class="agents-copy"><span class="overline">ROLE-BASED AI</span><h2>Built around how<br />teams actually work.</h2><p>Role-based agents for business teams. Three guided workflows are testable now; other specialist agents, permissions, and automation are on the roadmap.</p><a class="plain-link light-link" href="/request-demo.html">Book a demo <span aria-hidden="true">→</span></a></div><div class="agent-mini-grid"><div><span class="agent-icon">01</span><strong>Sales Agent</strong><small>Revenue & channel signals</small></div><div><span class="agent-icon">02</span><strong>Finance Agent</strong><small>Costs & margin review</small></div><div><span class="agent-icon">03</span><strong>Operations Agent</strong><small>Order activity · guided</small></div><div class="agent-planned"><span class="agent-icon">04</span><strong>Marketing Agent</strong><small>Campaign insights · planned</small></div><div class="agent-planned"><span class="agent-icon">05</span><strong>People Agent</strong><small>Workforce insights · planned</small></div><div class="agent-planned"><span class="agent-icon">06</span><strong>Leadership Agent</strong><small>Company briefs · planned</small></div></div></div></section>
+  <section class="agents-area" id="agents"><div class="container agents-wrap"><div class="agents-copy"><span class="overline">ROLE-BASED AI</span><h2>Built around how<br />teams actually work.</h2><p>Explore guided Sales, Finance and Operations analysis. More specialist capabilities will follow as Ranaise develops.</p><a class="plain-link light-link" href="/request-demo.html">Book a demo <span aria-hidden="true">→</span></a></div><div class="agent-mini-grid"><div><span class="agent-icon">01</span><strong>Sales Agent</strong><small>Revenue and channel performance</small><span class="agent-state">Guided demo</span></div><div><span class="agent-icon">02</span><strong>Finance Agent</strong><small>Costs and margin analysis</small><span class="agent-state">Guided demo</span></div><div><span class="agent-icon">03</span><strong>Operations Agent</strong><small>Orders and operational activity</small><span class="agent-state">Guided demo</span></div><div class="agent-planned"><span class="agent-icon">04</span><strong>Marketing Agent</strong><small>Campaign performance insights</small><span class="agent-state planned">Planned</span></div><div class="agent-planned"><span class="agent-icon">05</span><strong>People Agent</strong><small>Workforce and team insights</small><span class="agent-state planned">Planned</span></div><div class="agent-planned"><span class="agent-icon">06</span><strong>Leadership Agent</strong><small>Cross-functional business overview</small><span class="agent-state planned">Planned</span></div></div></div></section>
 
   <section class="section container booking-section" id="demo">
     <div class="section-head booking-head">
-      <div><span class="overline">EARLY ACCESS</span><h2>Start with a<br /><em>conversation.</em></h2></div>
+      <div><span class="overline">LET’S CONNECT</span><h2>Start with a<br /><em>conversation.</em></h2></div>
       <p>Tell us about your business, the tools your team uses, and the decisions you'd like to make with more clarity. We're collecting early requests as Ranaise develops.</p>
     </div>
     <div class="booking-panel">
@@ -138,5 +177,5 @@
   </section>
   <section class="closing"><div class="container closing-wrap"><div><span class="overline">WHAT'S NEXT</span><h2>Business intelligence<br />with room to grow.</h2><p>We're developing an intelligence layer for organizations to connect information, coordinate specialized agents, and keep decisions accountable.</p></div><a href="/request-demo.html" class="btn btn-white">Book a demo <span aria-hidden="true">→</span></a></div></section>
 </main>
-<footer><div class="container footer-row"><a href="/" class="brand footer-brand" aria-label="Ranaise homepage"><img class="brand-mark" src="/assets/favicon.svg" alt="" /><span class="brand-wordmark">Ranaise</span></a><div class="footer-data"><strong>Built with a human in the loop</strong><span>Guided beta analysis is available; connected agents and integrations remain in development.</span></div><span class="footer-status">Independent early-stage software project · © <span data-year>2026</span></span><div class="footer-links"><a href="/request-demo.html">Book a demo</a><a href="/workspace.html">Technical preview</a><a href="/privacy.html">Privacy</a><a href="mailto:founder@ranaise.site">Contact</a></div></div></footer>
+<footer><div class="container footer-row"><a href="/" class="brand footer-brand" aria-label="Ranaise homepage"><img class="brand-mark" src="/assets/favicon.svg" alt="" /><span class="brand-wordmark">Ranaise</span></a><span class="footer-status">© <span data-year>2026</span> Ranaise AI</span><div class="footer-links"><a href="/request-demo.html">Book a demo</a><a href="#interactive-beta">Interactive Beta</a><a href="/privacy.html">Privacy</a><a href="mailto:founder@ranaise.site">Contact</a></div></div></footer>
 </body></html>
