@@ -170,3 +170,5 @@ button:disabled{cursor:wait;opacity:.55}
   .form-success{padding:28px 24px}.form-success h2{font-size:38px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+.menu-toggle svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round}
