@@ -12,5 +12,14 @@
       if(event.target.closest("a")){mobileMenu.classList.remove("is-open");menuToggle.setAttribute("aria-expanded","false");}
     });
   }
+  document.querySelectorAll(".mobile-nav .mobile-menu a").forEach(link=>{
+    link.addEventListener("click",()=>{
+      const details=link.closest(".mobile-nav");
+      if(details)details.open=false;
+    });
+  });
+  document.querySelectorAll(".mobile-nav").forEach(details=>{
+    details.addEventListener("keydown",event=>{if(event.key==="Escape"){details.open=false;details.querySelector("summary")?.focus();}});
+  });
   document.querySelectorAll("[data-year]").forEach(el=>{el.textContent=String(new Date().getFullYear());});
 })();
