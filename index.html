@@ -39,8 +39,8 @@
 <a href="#main" class="skip">Skip to content</a>
 <header class="header"><div class="container nav">
   <a class="brand" href="#top" aria-label="Ranaise homepage"><img class="brand-mark" src="/assets/favicon.svg" alt="" /><span class="brand-wordmark">Ranaise</span></a>
-  <nav class="nav-links" aria-label="Main navigation"><a href="#platform">Product</a><a href="#agents">AI agents</a><a href="#intelligence-flow">How it works</a><a href="#interactive-beta">Interactive Beta</a><a href="/request-demo.html">Book a demo</a></nav>
-  <details class="mobile-nav"><summary aria-label="Toggle navigation"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg><span>Menu</span></summary><nav class="mobile-menu" aria-label="Mobile navigation"><a href="#platform">Product</a><a href="#agents">AI agents</a><a href="#intelligence-flow">How it works</a><a href="#interactive-beta">Interactive Beta</a><a href="/request-demo.html">Book a demo</a></nav></details>
+  <nav class="nav-links" aria-label="Main navigation"><a href="#intelligence-flow">How it works</a><a href="#platform">Product</a><a href="#interactive-beta">Interactive Beta</a><a href="#agents">AI agents</a></nav>
+  <details class="mobile-nav"><summary aria-label="Toggle navigation"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg><span>Menu</span></summary><nav class="mobile-menu" aria-label="Mobile navigation"><a href="#intelligence-flow">How it works</a><a href="#platform">Product</a><a href="#interactive-beta">Interactive Beta</a><a href="#agents">AI agents</a></nav></details>
   <a class="btn btn-small btn-dark" href="/request-demo.html">Book a demo <span aria-hidden="true">→</span></a>
 </div></header>
 <main id="main">
@@ -126,9 +126,9 @@
       <p class="experience-intro">Explore how Ranaise works with sample data or upload your own CSV. Choose a business perspective, ask a question and review a suggested next step.</p>
       <div class="beta-frame" id="workspace">
       <aside class="workspace-sidebar"><div class="workspace-brand"><span class="workspace-logo"><img src="/assets/favicon.svg" alt="" /></span><div><strong>Ranaise</strong><small>Interactive Beta</small></div></div><div class="side-overline">WORKSPACE</div>
-        <button type="button" class="side-btn is-active" data-view="overview" aria-pressed="true"><span></span> Overview</button>
-        <button type="button" class="side-btn" data-view="ask" aria-pressed="false"><span>02</span> Ask an agent</button>
-        <button type="button" class="side-btn" data-view="approvals" aria-pressed="false"><span></span> Approvals <span id="approval-count" class="count-pill">0</span></button>
+        <button type="button" class="side-btn is-active" data-view="overview" aria-pressed="true">Overview</button>
+        <button type="button" class="side-btn" data-view="ask" aria-pressed="false">Ask an agent</button>
+        <button type="button" class="side-btn" data-view="approvals" aria-pressed="false">Approvals</button>
         <div class="sidebar-spacer"></div><div class="sidebar-profile"><span class="profile-avatar"><img src="/assets/favicon.svg" alt="" /></span><div><strong>Demo workspace</strong><small>Local browser session</small></div></div>
       </aside>
       <div class="workspace-main">
@@ -142,8 +142,8 @@
           <p class="dataset-help">Own CSV? Use <code>channel,revenue,cost,orders</code> columns. Parsed locally in your browser. Up to 1,000 records / 2 MB.</p>
         </section>
         <section class="workspace-view" id="view-ask" hidden>
-          <div class="agent-toolbar"><div><label class="input-label" for="agent-role">SPECIALIST</label><select id="agent-role"><option value="sales">Sales Agent</option><option value="finance">Finance Agent</option><option value="operations">Operations Agent</option></select></div><span class="agent-mode"><span class="mode-dot"></span> Guided analysis · local beta</span></div>
-          <div class="chat-panel"><div class="chat-heading"><span class="chat-orb">02</span><div><strong id="agent-intro">Sales Agent</strong><small>Sample-backed, explainable responses</small></div></div><div class="chat-log" id="chat-log" aria-live="polite"></div>
+          <div class="agent-toolbar"><div><label class="input-label" for="agent-role">SPECIALIST</label><select id="agent-role"><option value="sales">Sales Agent</option><option value="finance">Finance Agent</option><option value="operations">Operations Agent</option></select></div></div>
+          <div class="chat-panel"><div class="chat-heading"><span class="chat-orb"><img src="/assets/favicon.svg" alt="" /></span><div><strong id="agent-intro">Sales Agent</strong><small>Sample-backed, explainable responses</small></div></div><div class="chat-log" id="chat-log" aria-live="polite"></div>
             <div class="prompt-examples" id="prompt-examples"><button type="button" data-prompt="Which channel leads sales?">Top channel</button><button type="button" data-prompt="Summarize sales performance">Sales overview</button><button type="button" data-prompt="Prepare a sales review">Draft next step</button></div>
             <form id="ask-form" class="ask-form"><label class="sr-only" for="question">Ask a business question</label><input id="question" maxlength="500" placeholder="Ask something about your business data…" autocomplete="off" required /><button type="submit" aria-label="Send question">↗</button></form>
           </div><div class="ai-expander"><details><summary>Optional Claude-powered analysis <span>↗</span></summary><p>Live AI is disabled unless an operator configures Anthropic credentials and a beta access code on the server. Only an aggregate data summary and your question are sent, never the original CSV file.</p><div class="ai-controls"><label class="sr-only" for="beta-code">Beta access code</label><input id="beta-code" type="password" placeholder="Beta access code (if invited)" autocomplete="off" /><button class="small-btn" id="ask-claude" type="button">Ask Claude</button></div><p class="ai-output" id="claude-answer" role="status">No live AI requests have been made.</p></details></div>
