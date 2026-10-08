@@ -157,7 +157,7 @@ function init(){
     } catch(error){out.textContent='Live AI unavailable: '+error.message;}
     finally{button.disabled=false;}
   });
-  $('year').textContent=String(new Date().getFullYear());
+  if ($('year')) $('year').textContent=String(new Date().getFullYear());
   updateOverview();renderRole();renderDrafts();setView('overview');
 }
 init();
